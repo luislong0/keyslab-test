@@ -8,7 +8,7 @@ export async function POST(request: Request) {
   const bodySchema = z.object({
     email: z.string(),
     username: z.string(),
-    password: z.string().min(5, 'Insira uma senha com mais de 5 dígitos!'),
+    password: z.string().min(8, 'Insira uma senha com mais de 8 dígitos!'),
     birthDate: z.string(),
   })
 

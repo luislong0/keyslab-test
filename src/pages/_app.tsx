@@ -1,4 +1,5 @@
 import '@/styles/globals.css'
+import { SessionProvider } from 'next-auth/react'
 import type { AppProps } from 'next/app'
 import { Inter } from 'next/font/google'
 import { ToastContainer } from 'react-toastify'
@@ -9,22 +10,27 @@ const inter = Inter({
   weight: ['400', '500', '600', '700', '900'],
 })
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppProps) {
   return (
-    <main className={`${inter.className}`}>
-      <Component {...pageProps} />
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-      />
-    </main>
+    <SessionProvider session={session}>
+      <main className={`${inter.className}`}>
+        <Component {...pageProps} />
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
+      </main>
+    </SessionProvider>
   )
 }
