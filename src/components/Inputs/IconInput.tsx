@@ -32,7 +32,7 @@ export function IconInput({
         {icon}
         <input
           className={twMerge(
-            'bg-transparent text-[16px] placeholder:text-zinc-400',
+            'bg-transparent text-[16px] placeholder:text-zinc-400 focus:outline-none',
             className,
           )}
           ref={ref}

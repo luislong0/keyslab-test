@@ -16,7 +16,6 @@ export function PasswordInput({
   icon,
   name,
   className,
-  type,
   ...inputProps
 }: PasswordInputProps) {
   const { showPassword, toggleShowPassword } = usePasswordInput()
@@ -38,7 +37,7 @@ export function PasswordInput({
         {icon}
         <input
           className={twMerge(
-            'bg-transparent text-[16px] placeholder:text-zinc-400',
+            'bg-transparent text-[16px] placeholder:text-zinc-400 focus:outline-none',
             className,
           )}
           type={showPassword ? 'text' : 'password'}
