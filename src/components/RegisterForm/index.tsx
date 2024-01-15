@@ -1,18 +1,18 @@
 import { IconInput } from '../Inputs/IconInput'
-import { Mail, LockKeyhole, User, Calendar } from 'lucide-react'
+import { Mail, LockKeyhole, User, Calendar, Gamepad2 } from 'lucide-react'
 import { PasswordInput } from '../Inputs/PasswordInput.tsx'
 import { DefaultButton } from '../Buttons/DefaultButton'
 import { HookFormConfig } from '@/lib/HookForm'
 import { FormProvider } from 'react-hook-form'
-import { useLoginForm } from '../LoginForm/hook'
 import { RegisterFormSchema, registerFormSchema } from './schema'
+import { useRegisterForm } from './hook'
 
 export function RegisterForm() {
   const { formMethods } = HookFormConfig<RegisterFormSchema>({
     schema: registerFormSchema,
   })
 
-  const { onSubmit, onSubmitError } = useLoginForm()
+  const { onSubmit, onSubmitError } = useRegisterForm()
 
   return (
     <FormProvider {...formMethods}>
@@ -63,8 +63,15 @@ export function RegisterForm() {
         <div className="flex flex-col gap-5 mt-10">
           <DefaultButton
             type="submit"
+            disabled={formMethods.formState.isSubmitting}
             className="bg-blue-500 text-zinc-950 font-semibold hover:bg-blue-400 transition-all"
-            label="Registre-se"
+            label={
+              formMethods.formState.isSubmitting ? (
+                <Gamepad2 className="animate-pulse" />
+              ) : (
+                'Registre-se'
+              )
+            }
           />
         </div>
       </form>

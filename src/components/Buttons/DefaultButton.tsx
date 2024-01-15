@@ -2,7 +2,7 @@ import { ComponentProps } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 interface DefaultButtonProps extends ComponentProps<'button'> {
-  label: string
+  label: string | React.ReactNode
 }
 
 export function DefaultButton({
@@ -12,7 +12,10 @@ export function DefaultButton({
 }: DefaultButtonProps) {
   return (
     <button
-      className={twMerge('w-full rounded-full p-4 text-sm', className)}
+      className={twMerge(
+        'w-full flex justify-center text-center rounded-full p-4 text-sm',
+        className,
+      )}
       {...buttonProps}
     >
       {label}
