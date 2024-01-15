@@ -3,8 +3,6 @@ import Image from 'next/image'
 import profileLoginImage from '../../assets/profile-login-img.png'
 import { LoginForm } from '@/components/LoginForm'
 
-import keyslabSidebarImage from '../../assets/Sidebar.png'
-
 export default function Login() {
   return (
     <AuthLayout>
