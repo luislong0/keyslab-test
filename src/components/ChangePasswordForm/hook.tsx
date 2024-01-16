@@ -1,32 +1,27 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { createResetCodeDigits } from '@/utils/createResetCodeDigits'
-import { RequestPasswordFormSchema } from './schema'
-import { useAuthContext } from '@/contexts/authContext'
-import { api } from '@/lib/axios'
 import axios from 'axios'
-import { errorNotification } from '../Notifiers/Error'
+import { ChangePasswordFormSchema } from './schema'
 import { useRouter } from 'next/router'
+import { errorNotification } from '../Notifiers/Error'
 import { successNotification } from '../Notifiers/Success'
+import { api } from '@/lib/axios'
+import { useAuthContext } from '@/contexts/authContext'
 
-export function useRequestPasswordForm() {
-  const { setResetCode, setUserEmail } = useAuthContext()
+export function useChangePasswordForm() {
   const router = useRouter()
+  const { userEmail } = useAuthContext()
 
   // Funções para fazer o submit do formulário e função quando da erro no submit do formulário
-  async function onSubmit(data: RequestPasswordFormSchema) {
-    const code = createResetCodeDigits() // Gerar numero de 5 dígitos
-    setResetCode(code)
-
+  async function onSubmit(data: ChangePasswordFormSchema) {
     try {
-      const response = await api.post('/auth/send-reset-code-email', {
-        email: data.requestEmail,
-        code,
+      const response = await api.post('/auth/change-password', {
+        userEmail,
+        newPassword: data.newPassword,
       })
 
       if (response.status === 200) {
-        setUserEmail(data.requestEmail)
-        successNotification('Código enviado com sucesso')
-        router.push('/auth/verify-code')
+        router.push('/auth/login')
+        successNotification('Senha alterada com sucesso')
       }
     } catch (error) {
       if (axios.isAxiosError(error) && error.response) {

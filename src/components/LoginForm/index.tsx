@@ -39,7 +39,10 @@ export function LoginForm() {
         </div>
 
         <div className="mt-2 w-full flex justify-end">
-          <DefaultLink href={'/forgetPassword'} label="Esqueci minha senha" />
+          <DefaultLink
+            href={'/auth/request-password'}
+            label="Esqueci minha senha"
+          />
         </div>
 
         <div className="flex flex-col gap-5 mt-5">

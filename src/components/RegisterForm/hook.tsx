@@ -20,6 +20,7 @@ export function useRegisterForm() {
       })
     } catch (error) {
       if (axios.isAxiosError(error) && error.response) {
+        // Trata erros sobre a chamada HTTP
         errorNotification(error.response.data.Message)
       } else {
         // Trata erros que não são de uma resposta HTTP (ex: problemas de rede, timeout, etc)

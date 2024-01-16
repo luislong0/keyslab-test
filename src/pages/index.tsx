@@ -7,7 +7,9 @@ export default function Home() {
   const router = useRouter()
 
   function handleSignOut() {
-    signOut()
+    signOut({
+      redirect: false,
+    })
     router.push('/auth/login')
   }
 

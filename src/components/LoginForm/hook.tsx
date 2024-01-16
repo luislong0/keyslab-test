@@ -13,9 +13,12 @@ export function useLoginForm() {
     console.log(data)
 
     const result = await signIn('credentials', {
+      redirect: false,
       email: data.email,
       password: data.password,
     })
+
+    console.log(result?.ok)
 
     if (result) {
       if (!result.ok) {
