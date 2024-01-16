@@ -8,14 +8,14 @@ import Image from 'next/image'
 export default function Register() {
   return (
     <AuthLayout>
-      <div className="max-h-[820px] w-full mx-auto flex items-center">
+      <div className="max-h-[820px] w-full mx-auto flex items-center px-5 lg:px-0">
         <Image
           src={keyslabSidebarImage}
           width={450}
           height={820}
           alt="Sidebar Image"
           quality={100}
-          className="rounded-md hidden lg:flex"
+          className="rounded-none 2xl:rounded-md hidden h-screen 2xl:h-full lg:flex"
         />
 
         <div className="w-full flex flex-col items-center">

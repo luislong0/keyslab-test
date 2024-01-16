@@ -12,7 +12,7 @@ export function Container({
   ...componentProps
 }: ContainerProps) {
   // const newClass =
-  //   'h-screen mx-auto flex flex-col justify-start items-start px-5'
+  //   'h-screen mx-auto flex flex-col justify-start items-start'
 
   return (
     <div

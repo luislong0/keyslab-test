@@ -2,6 +2,7 @@
 import { z } from 'zod'
 import { NextApiRequest, NextApiResponse } from 'next'
 import nodemailer, { Transporter } from 'nodemailer'
+import { prisma } from '@/lib/prisma'
 
 const bodySchema = z.object({
   email: z.string().email(),
@@ -14,6 +15,12 @@ export default async function handler(
 ) {
   if (req.method === 'POST') {
     const { code, email } = bodySchema.parse(req.body)
+
+    const user = await prisma.user.findUnique({
+      where: {
+        email,
+      },
+    })
 
     const transporter: Transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
@@ -34,8 +41,12 @@ export default async function handler(
     }
 
     try {
-      await transporter.sendMail(mailOptions)
-      res.status(200).json({ success: true })
+      if (!user) {
+        return res.status(401).json({ Message: 'E-mail não cadastrado!' })
+      } else {
+        await transporter.sendMail(mailOptions)
+        res.status(200).json({ success: true })
+      }
     } catch (error: any) {
       res.status(500).json({ success: false, message: error.message })
     }

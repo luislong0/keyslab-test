@@ -56,7 +56,7 @@ export function RegisterForm() {
             name="birthDate"
             type="date"
             placeholder="nome@exemplo.com"
-            className="w-full text-zinc-50"
+            className="w-full text-zinc-50 "
           />
         </div>
 

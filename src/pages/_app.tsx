@@ -16,7 +16,7 @@ export default function App({
 }: AppProps) {
   return (
     <SessionProvider session={session}>
-      <main className={`${inter.className}`}>
+      <main className={`${inter.className} antialiased`}>
         <Component {...pageProps} />
         <ToastContainer
           position="top-right"

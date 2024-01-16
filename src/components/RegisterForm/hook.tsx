@@ -3,8 +3,11 @@ import { api } from '@/lib/axios'
 import { RegisterFormSchema } from './schema'
 import axios from 'axios'
 import { errorNotification } from '../Notifiers/Error'
+import { useRouter } from 'next/router'
+import { successNotification } from '../Notifiers/Success'
 
 export function useRegisterForm() {
+  const router = useRouter()
   // Funções para fazer o submit do formulário e função quando da erro no submit do formulário
   async function onSubmit(data: RegisterFormSchema) {
     const date = new Date(data.birthDate)
@@ -12,12 +15,17 @@ export function useRegisterForm() {
     const convertedDate = date.toISOString()
 
     try {
-      await api.post('/user/create', {
+      const response = await api.post('/user/create', {
         email: data.email,
         username: data.username,
         password: data.password,
         birthDate: convertedDate,
       })
+
+      if (response.status === 201) {
+        router.push('/auth/login')
+        successNotification('Conta criada com sucesso')
+      }
     } catch (error) {
       if (axios.isAxiosError(error) && error.response) {
         // Trata erros sobre a chamada HTTP
