@@ -1,5 +1,5 @@
 import { IconInput } from '../Inputs/IconInput'
-import { Mail, LockKeyhole } from 'lucide-react'
+import { Mail, LockKeyhole, Gamepad2 } from 'lucide-react'
 import { PasswordInput } from '../Inputs/PasswordInput.tsx'
 import { DefaultLink } from '../Links/DefaultLink'
 import { DefaultButton } from '../Buttons/DefaultButton'
@@ -48,8 +48,15 @@ export function LoginForm() {
         <div className="flex flex-col gap-5 mt-5">
           <DefaultButton
             type="submit"
+            disabled={formMethods.formState.isSubmitting}
             className="bg-blue-500 text-zinc-950 font-semibold hover:bg-blue-400 transition-all"
-            label="Entrar na conta"
+            label={
+              formMethods.formState.isSubmitting ? (
+                <Gamepad2 className="animate-pulse" />
+              ) : (
+                'Entrar na conta'
+              )
+            }
           />
 
           <div className="flex gap-1 text-sm text-zinc-400 justify-center">

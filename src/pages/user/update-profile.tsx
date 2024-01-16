@@ -34,7 +34,7 @@ export default function UpdateProfile() {
             </p>
 
             <code className="text-xs text-zinc-600 font-base max-w-[416px]">
-              * Para visualizar suas informações atualizada voce precisa
+              * Para visualizar suas informações atualizadas, você precisa
               realizar o login novamente *
             </code>
           </div>
