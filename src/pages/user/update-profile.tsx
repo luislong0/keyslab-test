@@ -27,7 +27,7 @@ export default function UpdateProfile() {
                 <Link href={'/'} className="hover:text-blue-500 transition-all">
                   <ChevronLeft size={28} fontWeight={700} />
                 </Link>
-                <span className="flex -ml-10">Crie sua conta</span>
+                <span className="flex -ml-10">Atualize suas informações</span>
                 <div className="w-[1px]" />
               </span>
 
