@@ -11,8 +11,6 @@ export function useVerifyCodeForm() {
 
   // Funções para fazer o submit do formulário e função quando da erro no submit do formulário
   async function onSubmit(data: VerifyCodeFormSchema) {
-    console.log(resetCode)
-    console.log(data.code)
     if (data.code === resetCode) {
       router.push('/auth/change-password')
       successNotification('Código válido')
