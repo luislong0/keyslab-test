@@ -12,8 +12,11 @@ export default function ChangePassword() {
             <h1 className="text-3xl font-semibold">
               Troque agora mesmo sua senha!
             </h1>
-            <span className="font-medium text-lg text-zinc-400">
-              Mude agora mesmo sua senha de pelo menos 6 digitos!
+            <span className="font-base text-lg text-zinc-400">
+              Crie agora uma nova senha, composta por no mínimo 8 caracteres.
+              Sua escolha de senha robusta garante a proteção ideal para sua
+              conta, proporcionando tranquilidade e controle total sobre sua
+              experiência conosco.
             </span>
           </div>
 

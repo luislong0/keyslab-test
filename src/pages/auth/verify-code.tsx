@@ -12,8 +12,10 @@ export default function VerifyCode() {
             <h1 className="text-3xl font-semibold">
               Uhuuul, agora você tem seu código em mãos!
             </h1>
-            <span className="font-medium text-lg text-zinc-400">
-              Digite o código que foi enviado em seu email para poder trocar de
+            <span className="font-base text-lg text-zinc-400">
+              Informe o código de verificação enviado para o seu e-mail a fim de
+              iniciar o processo de redefinição de senha. Este código garantirá
+              a segurança do procedimento, permitindo que você escolha uma nova
               senha
             </span>
           </div>

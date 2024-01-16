@@ -11,10 +11,10 @@ export default function RequestPassword() {
           <h1 className="text-3xl font-semibold">
             Esqueceu sua senha? Vamos resolver isso!
           </h1>
-          <span className="font-medium text-lg text-zinc-400">
-            Digite seu endereço de e-mail para obter orientações sobre como
-            redefinir sua senha. Um e-mail será enviado à sua conta com as
-            instruções para alteração da senha.
+          <span className="font-base text-lg text-zinc-400">
+            Insira seu endereço de e-mail para receber um código de verificação.
+            Enviaremos um e-mail para sua conta com as instruções sobre como
+            usar o código para redefinir sua senha.
           </span>
 
           <RequestPasswordForm />

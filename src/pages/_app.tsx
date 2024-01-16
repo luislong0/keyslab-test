@@ -6,6 +6,7 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { DefaultSeo } from 'next-seo'
 
+// Configuração das fontes
 const inter = Inter({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '900'],
@@ -16,9 +17,11 @@ export default function App({
   pageProps: { session, ...pageProps },
 }: AppProps) {
   return (
+    // Provedor de sessão do usuário
     <SessionProvider session={session}>
       <main className={`${inter.className} antialiased`}>
         <Component {...pageProps} />
+        {/* Configuração do Toast */}
         <ToastContainer
           position="top-right"
           autoClose={5000}
@@ -31,12 +34,13 @@ export default function App({
           pauseOnHover
           theme="dark"
         />
+        {/* Configuração do SEO */}
         <DefaultSeo
           openGraph={{
             type: 'website',
             locale: 'pt_BR',
-            url: 'https://book-wise.com.br',
-            siteName: 'Book Wise',
+            url: 'https://keyslab-test.vercel.app',
+            siteName: 'Keyslab',
           }}
         />
       </main>
