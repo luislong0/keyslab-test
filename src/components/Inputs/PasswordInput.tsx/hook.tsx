@@ -5,7 +5,6 @@ export function usePasswordInput() {
 
   // Função para mostrar e esconder a senha
   function toggleShowPassword() {
-    console.log('Passou por aqui ' + showPassword)
     setShowPassword(!showPassword)
   }
 

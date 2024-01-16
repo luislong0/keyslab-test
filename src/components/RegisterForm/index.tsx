@@ -1,19 +1,18 @@
 import { IconInput } from '../Inputs/IconInput'
-import { Mail, LockKeyhole, Gamepad2 } from 'lucide-react'
+import { Mail, LockKeyhole, User, Calendar, Gamepad2 } from 'lucide-react'
 import { PasswordInput } from '../Inputs/PasswordInput.tsx'
-import { DefaultLink } from '../Links/DefaultLink'
 import { DefaultButton } from '../Buttons/DefaultButton'
 import { HookFormConfig } from '@/lib/HookForm'
-import { LoginFormSchema, loginFormSchema } from './schema'
 import { FormProvider } from 'react-hook-form'
-import { useLoginForm } from './hook'
+import { RegisterFormSchema, registerFormSchema } from './schema'
+import { useRegisterForm } from './hook'
 
-export function LoginForm() {
-  const { formMethods } = HookFormConfig<LoginFormSchema>({
-    schema: loginFormSchema,
+export function RegisterForm() {
+  const { formMethods } = HookFormConfig<RegisterFormSchema>({
+    schema: registerFormSchema,
   })
 
-  const { onSubmit, onSubmitError } = useLoginForm()
+  const { onSubmit, onSubmitError } = useRegisterForm()
 
   return (
     <FormProvider {...formMethods}>
@@ -22,6 +21,14 @@ export function LoginForm() {
         className="w-full max-w-[416px] mt-8"
       >
         <div className="flex flex-col gap-6">
+          <IconInput
+            icon={<User className="text-zinc-800" size={28} />}
+            name="username"
+            type="string"
+            placeholder="john doe"
+            className="w-full text-zinc-50"
+          />
+
           <IconInput
             icon={<Mail className="text-zinc-800" size={28} />}
             name="email"
@@ -36,16 +43,24 @@ export function LoginForm() {
             placeholder="********"
             className="w-full text-zinc-50"
           />
-        </div>
 
-        <div className="mt-2 w-full flex justify-end">
-          <DefaultLink
-            href={'/auth/request-password'}
-            label="Esqueci minha senha"
+          <PasswordInput
+            icon={<LockKeyhole className="text-zinc-800" size={28} />}
+            name="confirmPassword"
+            placeholder="********"
+            className="w-full text-zinc-50"
+          />
+
+          <IconInput
+            icon={<Calendar className="text-zinc-800" size={28} />}
+            name="birthDate"
+            type="date"
+            placeholder="nome@exemplo.com"
+            className="w-full text-zinc-50 "
           />
         </div>
 
-        <div className="flex flex-col gap-5 mt-5">
+        <div className="flex flex-col gap-5 mt-10">
           <DefaultButton
             type="submit"
             disabled={formMethods.formState.isSubmitting}
@@ -54,15 +69,10 @@ export function LoginForm() {
               formMethods.formState.isSubmitting ? (
                 <Gamepad2 className="animate-pulse" />
               ) : (
-                'Entrar na conta'
+                'Registre-se'
               )
             }
           />
-
-          <div className="flex gap-1 text-sm text-zinc-400 justify-center">
-            <span>Ainda não tem conta?</span>
-            <DefaultLink href={'/auth/register'} label="Registre-se" />
-          </div>
         </div>
       </form>
     </FormProvider>
