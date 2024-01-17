@@ -40,7 +40,6 @@ export default NextAuth({
             email: userResponse.email,
             userRole: userResponse.role,
           },
-          // ... outros campos do usuário
         }
 
         return user
