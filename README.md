@@ -14,7 +14,7 @@ Aplicação de um desafio realizado pela keyslab, projeto de autenticação e ca
 
 - `Funcionalidade 3` `Recuperar senha`: O usuário poderá recuperar sua senha através do seu e-mail cadastrado
 
-- `Funcionalidade 3` `Editar usuário`: O usuário editar suas informações.
+- `Funcionalidade 4` `Editar usuário`: O usuário editar suas informações.
 
 ## RFs (Requisitos funcionais)
 
