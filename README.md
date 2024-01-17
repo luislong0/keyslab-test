@@ -43,7 +43,7 @@ Aplicação de um desafio realizado pela keyslab, projeto de autenticação e ca
 - `React-hook-form 📃`
 - `Axios 🌐`
 - `React-Toastify ⚠️`
-- `DOcker 🚀`
+- `Docker 🚀`
 - `Prisma 💾`
 - `Next-auth 🔒`
 - `Next-SEO 📈`
