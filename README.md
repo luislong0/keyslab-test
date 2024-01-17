@@ -1,40 +1,76 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![testeGithub](src/assets/readme.png)
 
-## Getting Started
+<h1 align="center"> Keyslab - Test </h1>
 
-First, run the development server:
+# Resumo do projeto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Aplicação de um desafio realizado pela keyslab, projeto de autenticação e cadastro de usuário!
+
+## 🔨 Funcionalidades do projeto
+
+- `Funcionalidade 1` `Realizar login`: O usuário poderá realizar o login na plataforma com e-mail e senha.
+
+- `Funcionalidade 2` `Cadastrar usuário`: O usuário poderá se registrar na plataforma.
+
+- `Funcionalidade 3` `Recuperar senha`: O usuário poderá recuperar sua senha através do seu e-mail cadastrado
+
+- `Funcionalidade 3` `Editar usuário`: O usuário editar suas informações.
+
+## RFs (Requisitos funcionais)
+
+- [x] Deve ser possível se cadastrar;
+- [x] Deve ser possível se autenticar;
+- [x] Deve ser possível alterar as informações do usuário;
+- [x] Deve ser possível recuperar a senha do usuário;
+
+## RNs (Regras de negócio)
+
+- [x] O usuário não deve poder se cadastrar com um e-mail nem username duplicado;
+- [x] O e-mail de recuperação de senha so é enviado ao usuário se ele for cadastrado no sistema;
+- [x] O usuário so poderá acessar a plataforma depois de logado;
+- [x] Se tentar navegar na plataforma sem estar logado, o usuário e redirecionado para tela de login;
+
+## RNFs (Requisitos não-funcionais)
+
+- [x] As senhas tem que ter pelo menos 8 dígitos;
+- [x] Os dados da aplicação precisam estar persistidos em um banco PostgreSQL;
+
+## ✔️ Técnicas e tecnologias utilizadas
+
+- `NextJS ⚛️`
+- `TailwindCSS 🎨`
+- `Zod 🔐`
+- `React-hook-form 📃`
+- `Axios 🌐`
+- `React-Toastify ⚠️`
+- `DOcker 🚀`
+- `Prisma 💾`
+- `Next-auth 🔒`
+- `Next-SEO 📈`
+- `Zustand 🎉`
+- `NodeMailer 📃`
+
+
+## 📁 Acesso ao projeto
+
+### Run
+
+**Install dependencies**
+
+```
+npm install ou pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Run Dev**
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```
+npm run dev ou pnpm run dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+**Run Docker**
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
+docker-compose up -d
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Você pode acessar a aplicação clicando [aqui](https://keyslab-test.vercel.app).

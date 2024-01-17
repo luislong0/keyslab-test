@@ -2,7 +2,7 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-// This function can be marked `async` if using `await` inside
+// Middleware para validar se o usuário está logado ou não
 export function middleware(request: NextRequest) {
   const authToken = request.cookies.get('next-auth.session-token')?.value
   const secureAuthToken = request.cookies.get(
