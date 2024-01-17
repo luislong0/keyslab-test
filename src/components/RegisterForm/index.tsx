@@ -38,6 +38,7 @@ export function RegisterForm() {
           />
 
           <PasswordInput
+            id="password"
             icon={<LockKeyhole className="text-zinc-800" size={28} />}
             name="password"
             placeholder="********"
@@ -45,6 +46,7 @@ export function RegisterForm() {
           />
 
           <PasswordInput
+            id="confirmPassword"
             icon={<LockKeyhole className="text-zinc-800" size={28} />}
             name="confirmPassword"
             placeholder="********"

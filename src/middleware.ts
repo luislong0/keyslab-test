@@ -10,14 +10,14 @@ export function middleware(request: NextRequest) {
   )?.value
 
   //   dev
-  // if (authToken === undefined) {
-  //   return NextResponse.redirect(new URL('/auth/login', request.url))
-  // }
-
-  //  prod
-  if (secureAuthToken === undefined) {
+  if (authToken === undefined) {
     return NextResponse.redirect(new URL('/auth/login', request.url))
   }
+
+  //  prod
+  // if (secureAuthToken === undefined) {
+  //   return NextResponse.redirect(new URL('/auth/login', request.url))
+  // }
 }
 
 // See "Matching Paths" below to learn more

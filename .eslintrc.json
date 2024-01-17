@@ -4,6 +4,7 @@
     "@rocketseat/eslint-config/next"
   ],
   "rules": {
+    "@typescript-eslint/no-namespace": "off",
     "no-useless-constructor": "off",
     "no-new": "off"
   }

@@ -7,7 +7,8 @@
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix"
+    "lint:fix": "next lint --fix",
+    "test:e2e": "cypress open"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
@@ -28,6 +29,7 @@
     "zustand": "^4.4.7"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.3.1",
     "@rocketseat/eslint-config": "^2.1.0",
     "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20",
@@ -35,6 +37,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "cypress": "^13.6.3",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
     "postcss": "^8",
